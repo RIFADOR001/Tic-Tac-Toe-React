@@ -2,6 +2,9 @@ import React, {useState, useRef} from 'react'
 import './TicTacToe.css'
 import circle_icon from '../Assets/circle-no-background.png'
 import cross_icon from '../Assets/cross-no-background.png'
+import circle_icon_winner from '../Assets/circle-winner-no-background.png'
+import cross_icon_winner from '../Assets/cross-winner-no-background.png'
+
 
 let data = ["", "", "", "", "", "", "", "", ""]
 
@@ -44,18 +47,54 @@ const TicTacToe = () => {
 		for(let i=0; i < 3; i++){
 			if(data[3*i+0]===data[3*i+1] && data[3*i+1]===data[3*i+2] && data[3*i+0]!==""){
 				won(data[3*i+0]);
+				if (data[3*i+0] === "x"){
+					box_array[3*i+0].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[3*i+1].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[3*i+2].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+				} else {
+					box_array[3*i+0].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[3*i+1].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[3*i+2].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+				}
 			}
 		}
 		for(let i=0; i < 3; i++){
 			if(data[0+i]===data[3+i] && data[3+i]===data[6+i] && data[0+i]!==""){
 				won(data[0+i]);
+				if (data[i] === "x"){
+					box_array[i].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[3+i].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[6+i].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+				} else {
+					box_array[i].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[3+i].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[6+i].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+				}
 			}
 		}
 		if(data[0]===data[4] && data[4]===data[8] && data[0]!==""){
 			won(data[0]);
+			if (data[0] === "x"){
+					box_array[0].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[4].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[8].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+				} else {
+					box_array[0].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[4].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[8].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+				}
 		}
 		if(data[2]===data[4] && data[4]===data[6] && data[2]!==""){
 			won(data[2]);
+			if (data[2] === "x"){
+					box_array[2].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[4].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+					box_array[6].current.innerHTML = `<img src='${cross_icon_winner}'>`;
+				} else {
+					box_array[2].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[4].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+					box_array[6].current.innerHTML = `<img src='${circle_icon_winner}'>`;
+				}
 		}
 	}
 
