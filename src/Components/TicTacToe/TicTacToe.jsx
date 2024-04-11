@@ -11,8 +11,11 @@ let data = ["", "", "", "", "", "", "", "", ""]
 const TicTacToe = () => {
 
 	let [count, setCount] = useState(0);
+	let [circleVictories, setCircleVictories] = useState(0)
+	let [crossVictories, setCrossVictories] = useState(0)
 	let [lock, setLock] = useState(false);
-	let titleRef = useRef(null);
+	let victoriesRef = useRef(null);
+	let moveRef = useRef(null);
 	let box0 = useRef(null);
 	let box1 = useRef(null);
 	let box2 = useRef(null);
@@ -22,6 +25,7 @@ const TicTacToe = () => {
 	let box6 = useRef(null);
 	let box7 = useRef(null);
 	let box8 = useRef(null);
+
 
 	let box_array = [box0, box1, box2, box3, box4, box5, box6, box7, box8];
 
@@ -39,6 +43,7 @@ const TicTacToe = () => {
 				data[num] = "o";
 				setCount(++count);
 			}
+			updateMoves()
 			checkWin()
 		}
 	}
@@ -101,24 +106,38 @@ const TicTacToe = () => {
 	const won = (winner) => {
 		setLock(true);
 		if(winner==="x"){
-			titleRef.current.innerHTML = `Congratulations: <img src=${cross_icon}> wins`
+			moveRef.current.innerHTML = `Congratulations: <img src=${cross_icon}> wins`
+			setCrossVictories(++crossVictories);
 		} else {
-			titleRef.current.innerHTML = `Congratulations: <img src=${circle_icon}> wins`
+			moveRef.current.innerHTML = `Congratulations: <img src=${circle_icon}> wins`
+			setCircleVictories(++circleVictories);
+		}
+	}
+
+	const updateMoves = () => {
+		if (count % 2 === 0) {
+			moveRef.current.innerHTML = `<img src=${cross_icon}> moves`
+		} else {
+			moveRef.current.innerHTML = `<img src=${circle_icon}> moves`
 		}
 	}
 
 	const reset = () => {
 		setLock(false);
 		data = ["", "", "", "", "", "", "", "", ""]
-		titleRef.current.innerHTML = `Tic Tac Toe Game In <span className="react">React</span>`
+		updateMoves()
 		box_array.map((e) => {
 			e.current.innerHTML = "";
 		})
 	}
 
+
+
 	return (
 		<div className='container'>
-			<h1 className='title' ref={titleRef}>Tic Tac Toe Game In <span className="react">React</span></h1>
+			<h1 className='title'>Tic Tac Toe Game In <span className="react">React</span></h1>
+			<h1 className='victories' ref={victoriesRef}>Victories <img src={cross_icon}/>: {crossVictories}   <img src={circle_icon}/>:  {circleVictories}</h1>
+			<h1 className='moves' ref={moveRef}><img src={cross_icon}/> moves</h1>
 			<div ckassName='board'>
 				<div className="row1"> 
 					<div className="boxes" ref={box0} onClick={(e)=>{toggle(e,0)}}> </div>
