@@ -35,11 +35,11 @@ const TicTacToe = () => {
 		}
 		if (data[num] === "") {
 			if (count % 2 === 0) {
-				e.target.innerHTML = `<img src='${cross_icon}'>`;
+				e.target.innerHTML = `<img src='${cross_icon}' alt="cross">`;
 				data[num] = "x";
 				setCount(++count);
 			} else {
-				e.target.innerHTML = `<img src='${circle_icon}'>`;
+				e.target.innerHTML = `<img src='${circle_icon}' alt="circle">`;
 				data[num] = "o";
 				setCount(++count);
 			}
@@ -53,13 +53,13 @@ const TicTacToe = () => {
 			if(data[3*i+0]===data[3*i+1] && data[3*i+1]===data[3*i+2] && data[3*i+0]!==""){
 				won(data[3*i+0]);
 				if (data[3*i+0] === "x"){
-					box_array[3*i+0].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[3*i+1].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[3*i+2].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
+					box_array[3*i+0].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[3*i+1].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[3*i+2].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
 				} else {
-					box_array[3*i+0].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[3*i+1].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[3*i+2].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
+					box_array[3*i+0].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[3*i+1].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[3*i+2].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
 				}
 			}
 		}
@@ -67,38 +67,38 @@ const TicTacToe = () => {
 			if(data[0+i]===data[3+i] && data[3+i]===data[6+i] && data[0+i]!==""){
 				won(data[0+i]);
 				if (data[i] === "x"){
-					box_array[i].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[3+i].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[6+i].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
+					box_array[i].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[3+i].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[6+i].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
 				} else {
-					box_array[i].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[3+i].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[6+i].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
+					box_array[i].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[3+i].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[6+i].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
 				}
 			}
 		}
 		if(data[0]===data[4] && data[4]===data[8] && data[0]!==""){
 			won(data[0]);
 			if (data[0] === "x"){
-					box_array[0].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[4].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[8].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
+					box_array[0].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[4].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[8].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
 				} else {
-					box_array[0].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[4].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[8].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
+					box_array[0].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[4].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[8].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
 				}
 		}
 		if(data[2]===data[4] && data[4]===data[6] && data[2]!==""){
 			won(data[2]);
 			if (data[2] === "x"){
-					box_array[2].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[4].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
-					box_array[6].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross image">`;
+					box_array[2].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[4].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
+					box_array[6].current.innerHTML = `<img src='${cross_icon_winner}' alt="winner cross">`;
 				} else {
-					box_array[2].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[4].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
-					box_array[6].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle image">`;
+					box_array[2].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[4].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
+					box_array[6].current.innerHTML = `<img src='${circle_icon_winner}' alt="winner circle">`;
 				}
 		}
 	}
@@ -106,19 +106,19 @@ const TicTacToe = () => {
 	const won = (winner) => {
 		setLock(true);
 		if(winner==="x"){
-			moveRef.current.innerHTML = `Congratulations: <img src=${cross_icon} alt="cross image"> wins`
+			moveRef.current.innerHTML = `Congratulations: <img src=${cross_icon} alt="cross"> wins`
 			setCrossVictories(++crossVictories);
 		} else {
-			moveRef.current.innerHTML = `Congratulations: <img src=${circle_icon} alt="circle image"> wins`
+			moveRef.current.innerHTML = `Congratulations: <img src=${circle_icon} alt="circle"> wins`
 			setCircleVictories(++circleVictories);
 		}
 	}
 
 	const updateMoves = () => {
 		if (count % 2 === 0) {
-			moveRef.current.innerHTML = `<img src=${cross_icon} alt"cross image"> moves`
+			moveRef.current.innerHTML = `<img src=${cross_icon} alt"cross"> moves`
 		} else {
-			moveRef.current.innerHTML = `<img src=${circle_icon} alt="circle image"> moves`
+			moveRef.current.innerHTML = `<img src=${circle_icon} alt="circle"> moves`
 		}
 	}
 
@@ -127,7 +127,7 @@ const TicTacToe = () => {
 		data = ["", "", "", "", "", "", "", "", ""]
 		updateMoves()
 		box_array.map((e) => {
-			e.current.innerHTML = "";
+			return e.current.innerHTML = "";
 		})
 	}
 
@@ -136,8 +136,11 @@ const TicTacToe = () => {
 	return (
 		<div className='container'>
 			<h1 className='title'>Tic Tac Toe Game In <span className="react">React</span></h1>
-			<h1 className='victories' ref={victoriesRef}>Victories <img src={cross_icon} alt="cross image"/>: {crossVictories}   <img src={circle_icon}/>:  {circleVictories}</h1>
-			<h1 className='moves' ref={moveRef}><img src={cross_icon}/> moves</h1>
+			<h1 className='victories' ref={victoriesRef}>
+				Victories <img src={cross_icon} alt="cross"/>: {crossVictories}   
+				<img src={circle_icon} alt="circle"/>:  {circleVictories}
+			</h1>
+			<h1 className='moves' ref={moveRef}><img src={cross_icon} alt="cross"/> moves</h1>
 			<div ckassName='board'>
 				<div className="row1"> 
 					<div className="boxes" ref={box0} onClick={(e)=>{toggle(e,0)}}> </div>
