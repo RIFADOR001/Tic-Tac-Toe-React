@@ -124,8 +124,8 @@ padding-bottom: 0px;
 	display: inline-flex; 
 /*	height: 180px;
 	width: 180px;*/
-	height: 8em;
-	width: 8em;
+	height: 8rem;
+	width: 8rem;
 /*	background: #1f3540;*/
 	background: linear-gradient(to left,rgba(7,27,81,.5) 0%, rgba(0,128,128,1)100%);
 	border: 2px solid #0f1b21;
