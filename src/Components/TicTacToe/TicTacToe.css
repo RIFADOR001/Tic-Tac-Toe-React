@@ -5,7 +5,8 @@
 .title {
 	margin-top: 50px;
 	color: white;
-	font-size: 60px;
+/*	font-size: 40px;*/
+	font-size: 2em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,6 +15,39 @@
 .title span{
 	color: #26ffcb;
 	padding-left: 15px;
+}
+
+span {
+/*  font-size: 40px;*/
+  font-size: 1em;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  
+  &:after {
+    content: '';
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    left: auto;
+    top: 0;
+    bottom: 0;
+    right: -20%;
+    background-image: 
+      linear-gradient(135deg, 
+        rgba(255,255,255,0),
+        rgba(255,255,255,.8),
+        rgba(255,255,255,0)
+      );
+  }
+  &:hover {
+    
+    &:after {
+    transition: all .4s ease-out;
+      right: 100%;
+    }
+  }
 }
 
 /*.title img {
@@ -26,6 +60,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 2em;
 }
 
 .victories img {
@@ -41,6 +76,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 2em;
 }
 
 .moves img {
@@ -52,8 +88,10 @@ padding-bottom: 0px;
 }
 
 .reset {
-	width: 250px;
-	height: 100px;
+/*	width: 250px;
+	height: 100px;*/
+	width: 7.3em;
+	height: 3em;
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -74,8 +112,10 @@ padding-bottom: 0px;
 /*just flex didn't work*/
 .boxes{
 	display: inline-flex; 
-	height: 180px;
-	width: 180px;
+/*	height: 180px;
+	width: 180px;*/
+	height: 8em;
+	width: 8em;
 /*	background: #1f3540;*/
 	background: linear-gradient(to left,rgba(7,27,81,.5) 0%, rgba(0,128,128,1)100%);
 	border: 2px solid #0f1b21;
@@ -90,6 +130,10 @@ padding-bottom: 0px;
 	border-radius: 12px;
 	cursor: pointer;
 }
+
+
+
+
 
 .boxes img {
 /*	margin: 30px;*/
