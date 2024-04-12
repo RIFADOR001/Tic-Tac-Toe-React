@@ -50,6 +50,8 @@ span {
   }
 }
 
+
+
 /*.title img {
 	padding: 20px 20px;
 	height: 50px;
@@ -87,26 +89,34 @@ padding-bottom: 0px;
 	height: 30px;
 }
 
+
+
 .reset {
 /*	width: 250px;
 	height: 100px;*/
-	width: 7.3em;
+	width: 7.5em;
 	height: 3em;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	border-radius: 50px;
-	background: #1f3540;
+/*	background: #1f3540;*/
+	background: linear-gradient(to left,rgba(7,27,81,.5) 0%, rgba(0,128,128,1)100%);
 	font-size: 26px;
 	color: #26ffcb;
 	margin-top: 25px;
 	margin-bottom: 50px;
+	border: 2px solid black;
 }
 
 /*Mine*/
 .reset:hover {
-	background: blueviolet;
-	color: greenyellow;
+/*	background: blueviolet;
+	color: greenyellow;*/
+	width: 7.8em;
+	height: 3.2em;
+	background: linear-gradient(to left,rgba(7,27,81,1) 0%, rgba(0,128,128,1)100%);
+
 }
 
 /*just flex didn't work*/
